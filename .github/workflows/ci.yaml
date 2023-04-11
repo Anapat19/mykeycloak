@@ -76,7 +76,7 @@ jobs:
           IS_UPGRADED_VERSION: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version }}
           TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
         run: |
-          OUT=arnanapat/$GITHUB_REPOSITORY:$TO_VERSION,arnanapat/$GITHUB_REPOSITORY:latest
+          OUT=arnanapat/mykeycloak:latest
           OUT=$(echo "$OUT" | awk '{print tolower($0)}') 
           echo ::set-output name=docker_tags::$OUT
       - uses: docker/build-push-action@v4.0.0
