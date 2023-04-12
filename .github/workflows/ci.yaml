@@ -75,7 +75,7 @@ jobs:
         env: 
           IS_UPGRADED_VERSION: ${{ needs.check_if_version_upgraded.outputs.is_upgraded_version }}
           TO_VERSION: ${{ needs.check_if_version_upgraded.outputs.to_version }}
-          IMAGE_NAME: arnanapat/mykeycloak
+          IMAGE_NAME: "arnanapat/mykeycloak"
         run: |
           OUT=$IMAGE_NAME:$TO_VERSION,$IMAGE_NAME:latest
           OUT=$(echo "$OUT" | awk '{print tolower($0)}') 
